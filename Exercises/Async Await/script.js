@@ -5,12 +5,18 @@ const urls = [
 ]
 
 const getData= async function(){
-    const [posts,users,albums] = await Promise.all(urls.map(url=>
+    try
+    {const [posts,users,albums] = await Promise.all(urls.map(url=>
         fetch(url).then(resp=>resp.json())
-    ))
-    console.log('posts:',posts)
-    console.log('users:',users)
-    console.log('albums:',albums)
+        ))
+        console.log('posts:',posts),
+        console.log('users:',users),
+        console.log('albums:',albums)
+    }
+    catch(err)
+    {
+        console.log(err)
+    }
 }
 
 getData()
