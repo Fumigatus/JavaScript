@@ -1,3 +1,4 @@
+//ES9
 const animals={
     tiger : 5,
     lion : 10,
